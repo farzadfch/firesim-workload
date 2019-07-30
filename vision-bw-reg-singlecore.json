@@ -1,0 +1,28 @@
+{
+  "name" : "vision-bw-reg",
+  "base" : "br-base.json",
+  "overlay" : "overlay",
+  "outputs" : [ "/root/results/" ],
+  "jobs" : [
+    {
+      "name" : "0",
+      "run" : "run-vision-c0-bw-reg-singlecore.sh 0 1000"
+    },
+    {
+      "name" : "1",
+      "run" : "run-vision-c0-bw-reg-singlecore.sh 499 1"
+    },
+    {
+      "name" : "2",
+      "run" : "run-vision-c0-bw-reg-singlecore.sh 19999 40"
+    },
+    {
+      "name" : "3",
+      "run" : "run-vision-c0-bw-reg-singlecore.sh 1999999 4000"
+    },
+    {
+      "name" : "4",
+      "run" : "run-vision-c0-bw-reg-singlecore.sh 199999999 400000"
+    }
+  ]
+}
