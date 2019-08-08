@@ -1,0 +1,24 @@
+{
+  "name" : "vision-bw-reg",
+  "base" : "br-base.json",
+  "overlay" : "overlay",
+  "outputs" : [ "/root/results/" ],
+  "jobs" : [
+    {
+      "name" : "0",
+      "run" : "run-vision-c3-bw-reg.sh 0 1000 1000"
+    },
+    {
+      "name" : "1",
+      "run" : "run-vision-c3-bw-reg.sh 499 1 1"
+    },
+    {
+      "name" : "2",
+      "run" : "run-vision-c3-bw-reg.sh 19999 40 40"
+    },
+    {
+      "name" : "3",
+      "run" : "run-vision-c3-bw-reg.sh 1999999 4000 4000"
+    }
+  ]
+}
