@@ -2,10 +2,10 @@
 set -o xtrace
 
 latency -c3 -m8000 -i10
-bandwidth-rt -awrite -c0 -m8000 -i1 -j1000000 -l1 -t0 &
-bandwidth-rt -awrite -c1 -m8000 -i1 -j1000000 -l1 -t0 &
+bandwidth -awrite -c0 -m8000 -t0 &
+bandwidth -awrite -c1 -m8000 -t0 &
 bandwidth -awrite -c2 -m8000 -t0 &
-usleep 300000
+usleep 100000
 set-c012-quadcore-rdwr.sh 425 1 426
 latency -c3 -m8000 -i10
 set-c012-quadcore-rdwr.sh 425 2 426
