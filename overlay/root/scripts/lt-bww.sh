@@ -6,35 +6,37 @@ bandwidth -awrite -c0 -m8000 -t0 &
 bandwidth -awrite -c1 -m8000 -t0 &
 bandwidth -awrite -c2 -m8000 -t0 &
 usleep 100000
-set-c012-quadcore-rdwr.sh 425 1 426
+set-c012-quadcore-rdwr.sh 1277 3 1278
 latency -c3 -m8000 -i10
-set-c012-quadcore-rdwr.sh 425 2 426
+set-c012-quadcore-rdwr.sh 1277 6 1278
 latency -c3 -m8000 -i10
-set-c012-quadcore-rdwr.sh 425 3 426
+set-c012-quadcore-rdwr.sh 1277 9 1278
 latency -c3 -m8000 -i10
-set-c012-quadcore-rdwr.sh 425 4 426
+set-c012-quadcore-rdwr.sh 1277 12 1278
 latency -c3 -m8000 -i10
-set-c012-quadcore-rdwr.sh 425 5 426
+set-c012-quadcore-rdwr.sh 1277 15 1278
 latency -c3 -m8000 -i10
-set-c012-quadcore-rdwr.sh 425 6 426
+set-c012-quadcore-rdwr.sh 1277 18 1278
 latency -c3 -m8000 -i10
-set-c012-quadcore-rdwr.sh 425 7 426
+set-c012-quadcore-rdwr.sh 1277 21 1278
 latency -c3 -m8000 -i10
-set-c012-quadcore-rdwr.sh 425 8 426
+set-c012-quadcore-rdwr.sh 1277 24 1278
 latency -c3 -m8000 -i10
-set-c012-quadcore-rdwr.sh 425 9 426
+set-c012-quadcore-rdwr.sh 1277 27 1278
 latency -c3 -m8000 -i10
-set-c012-quadcore-rdwr.sh 425 10 426
+set-c012-quadcore-rdwr.sh 1277 30 1278
 latency -c3 -m8000 -i10
-set-c012-quadcore-rdwr.sh 425 11 426
+set-c012-quadcore-rdwr.sh 1277 33 1278
 latency -c3 -m8000 -i10
-set-c012-quadcore-rdwr.sh 425 12 426
+set-c012-quadcore-rdwr.sh 1277 36 1278
 latency -c3 -m8000 -i10
-set-c012-quadcore-rdwr.sh 425 13 426
+set-c012-quadcore-rdwr.sh 1277 39 1278
 latency -c3 -m8000 -i10
-set-c012-quadcore-rdwr.sh 425 14 426
+set-c012-quadcore-rdwr.sh 1277 42 1278
 latency -c3 -m8000 -i10
-set-c012-quadcore-rdwr.sh 425 15 426
+set-c012-quadcore-rdwr.sh 1277 45 1278
+latency -c3 -m8000 -i10
+set-c012-quadcore-rdwr.sh 1277 48 1278
 latency -c3 -m8000 -i10
 
 kill $(jobs -p)
