@@ -1,10 +1,4 @@
 #!/bin/bash
-#set -o xtrace
+set -o xtrace
 
-for i in {0..99}
-do
-  echo -n "$i "
-  bandwidth -awrite -m64 -i70 -c3 >> ${RES} 2> /dev/null
-  #taskset 3 hpm_counters -f >> ${RES}
-done
-echo
+bandwidth-rt -s -c3 -t0 -awrite -m4096 -i1 -j1000 -l4100 > ${RES} 2> /dev/null
