@@ -13,6 +13,6 @@ for d in "${benches[@]}" ; do
    echo copying ${d}
    target=overlay/root/vision/benchmarks/${d}
    mkdir -p ${target}
-   cp -r ~/cortexsuite/vision/benchmarks/${d}/data/* ${target}
+   cp -r ./cortexsuite/vision/benchmarks/${d}/data/* ${target}
 done
 
