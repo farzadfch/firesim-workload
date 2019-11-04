@@ -3,7 +3,6 @@
 
 export RES=/root/results/bw-disparity-loop-${1}.txt
 
-. /root/env.sh
 taskset 3 hpm_counters -f
 while true
 do
@@ -22,3 +21,4 @@ usleep 100000
 taskset 3 hpm_counters -f
 
 kill $(jobs -p)
+./killall.sh disparity
