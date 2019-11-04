@@ -1,0 +1,6 @@
+{
+  "name" : "farzad",
+  "base" : "br-base.json",
+  "overlay" : "overlay",
+  "outputs" : [ "/root/results/" ]
+}
