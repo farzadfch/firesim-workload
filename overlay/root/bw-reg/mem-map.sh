@@ -1,0 +1,4 @@
+#!/bin/bash
+
+export QUAD_PERF_EN=0x20000040
+export QUAD_PERF_PERIOD=0x20000044
