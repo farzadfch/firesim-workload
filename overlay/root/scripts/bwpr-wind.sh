@@ -4,9 +4,9 @@ set -o xtrace
 . /root/env.sh
 RES=/root/results
 
-# 1ms
-set-c0-singlecore-rdwr.sh 2129999 20000 2130000
-bandwidth-rt -m64 -i1 -j25 -l200 > $RES/bwrt-1ms.txt
-# 100ns
-set-c0-singlecore-rdwr.sh 212 2 213
-bandwidth-rt -m64 -i1 -j25 -l200 > $RES/bwrt-100ns.txt
+# 2ms
+set-c0123-quadcore-rdwr.sh 4259999 40000 4260000
+taskset 8 bandwidth-rt -m64 -i1 -j25 -l200 > $RES/bwpr-2ms.txt
+# 200ns
+set-c0123-quadcore-rdwr.sh 425 4 426
+taskset 8 bandwidth-rt -m64 -i1 -j25 -l200 > $RES/bwpr-200ns.txt
