@@ -1,8 +1,10 @@
 #!/bin/bash
+
 #set -o xtrace
+set -eu
 
-export RES=/root/results/ifft-solo-periodic.txt
+export RES=/root/results/solo.txt
 
-taskset 3 hpm_counters -f
-./ifft-periodic.sh
-taskset 3 hpm_counters -f
+echo -n hpmcs,; taskset 8 hpm_counters -f
+taskset 8 ./fft-periodic.sh
+echo -n hpmcs,; taskset 8 hpm_counters -f
