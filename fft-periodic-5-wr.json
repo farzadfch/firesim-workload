@@ -1,0 +1,29 @@
+{
+  "name" : "fft-periodic-5-wr",
+  "workdir" : "farzad",
+  "base" : "br-base.json",
+  "overlay" : "overlay",
+  "outputs" : [ "/root/results/" ],
+  "jobs" : [
+    {
+      "name" : "0",
+      "command" : "cd root; . ./env.sh; cd scripts; ./fft-solo-periodic.sh; poweroff -f"
+    },
+    {
+      "name" : "1",
+      "command" : "cd root; . ./env.sh; cd scripts; set-c012-100ns-rd1280-wr1280.sh; ./fft-bww-periodic.sh 100ns; poweroff -f"
+    },
+    {
+      "name" : "2",
+      "command" : "cd root; . ./env.sh; cd scripts; set-c012-10us-rd1280-wr1280.sh; ./fft-bww-periodic.sh 10us; poweroff -f"
+    },
+    {
+      "name" : "3",
+      "command" : "cd root; . ./env.sh; cd scripts; set-c012-1ms-rd1280-wr1280.sh; ./fft-bww-periodic.sh 1ms; poweroff -f"
+    },
+    {
+      "name" : "4",
+      "command" : "cd root; . ./env.sh; cd scripts; ./fft-bww-periodic.sh no-reg; poweroff -f"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "name" : "bw-periodic-bww-6",
+  "workdir" : "farzad",
+  "base" : "br-base.json",
+  "overlay" : "overlay",
+  "outputs" : [ "/root/results/" ],
+  "jobs" : [
+    {
+      "name" : "0",
+      "command" : "cd root; . ./env.sh; cd scripts; bru-set-perf-period.sh 21299; bru-en-perf.sh 1; ./bw-solo-loop.sh; poweroff -f"
+    },
+    {
+      "name" : "1",
+      "command" : "cd root; . ./env.sh; cd scripts; bru-set-perf-period.sh 21299; bru-en-perf.sh 1; set-c012-100ns-1280.sh; ./bw-bww-loop.sh 100ns; poweroff -f"
+    },
+    {
+      "name" : "2",
+      "command" : "cd root; . ./env.sh; cd scripts; bru-set-perf-period.sh 21299; bru-en-perf.sh 1; set-c012-100us-1280.sh; ./bw-bww-loop.sh 100us; poweroff -f"
+    },
+    {
+      "name" : "3",
+      "command" : "cd root; . ./env.sh; cd scripts; bru-set-perf-period.sh 21299; bru-en-perf.sh 1; set-c012-1ms-1280.sh; ./bw-bww-loop.sh 1ms; poweroff -f"
+    },
+    {
+      "name" : "4",
+      "command" : "cd root; . ./env.sh; cd scripts; bru-set-perf-period.sh 21299; bru-en-perf.sh 1; set-c012-10ms-1280.sh; ./bw-bww-loop.sh 10ms; poweroff -f"
+    },
+    {
+      "name" : "5",
+      "command" : "cd root; . ./env.sh; cd scripts; bru-set-perf-period.sh 21299; bru-en-perf.sh 1; ./bw-bww-loop.sh no-reg; poweroff -f"
+    }
+  ]
+}

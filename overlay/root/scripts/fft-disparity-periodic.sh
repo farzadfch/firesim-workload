@@ -1,7 +1,9 @@
 #!/bin/bash
-#set -o xtrace
 
-export RES=/root/results/${1}.txt
+#set -o xtrace
+set -eu
+
+export RES=/root/results/"$1".txt
 
 while true
 do
@@ -19,7 +21,7 @@ done &
 sleep 0.1
 
 echo -n hpmcs,; taskset 8 hpm_counters -f
-./bw-loop.sh
+taskset 8 ./fft-periodic.sh
 echo -n hpmcs,; taskset 8 hpm_counters -f
 
 kill $(jobs -p)

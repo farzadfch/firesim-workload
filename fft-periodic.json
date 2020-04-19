@@ -1,0 +1,13 @@
+{
+  "name" : "fft-periodic",
+  "workdir" : "farzad",
+  "base" : "br-base.json",
+  "overlay" : "overlay",
+  "outputs" : [ "/root/results/" ],
+  "jobs" : [
+    {
+      "name" : "0",
+      "command" : "cd root; . ./env.sh; cd scripts; ./run-1280.sh fft-bww-periodic.sh fft-solo-periodic.sh; poweroff -f"
+    }
+  ]
+}

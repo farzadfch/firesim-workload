@@ -1,0 +1,41 @@
+{
+  "name" : "bw-periodic-disparity-8",
+  "workdir" : "farzad",
+  "base" : "br-base.json",
+  "overlay" : "overlay",
+  "outputs" : [ "/root/results/" ],
+  "jobs" : [
+    {
+      "name" : "solo",
+      "command" : "cd root; . ./env.sh; cd scripts; bru-set-perf-period.sh 21299; bru-en-perf.sh 1; ./bw-solo-loop.sh; poweroff -f"
+    },
+    {
+      "name" : "100ns",
+      "command" : "cd root; . ./env.sh; cd scripts; bru-set-perf-period.sh 21299; bru-en-perf.sh 1; set-c012-100ns-1280.sh; ./bw-disparity-loop.sh 100ns; poweroff -f"
+    },
+    {
+      "name" : "800ns",
+      "command" : "cd root; . ./env.sh; cd scripts; bru-set-perf-period.sh 21299; bru-en-perf.sh 1; set-c012-800ns-1280.sh; ./bw-disparity-loop.sh 800ns; poweroff -f"
+    },
+    {
+      "name" : "10us",
+      "command" : "cd root; . ./env.sh; cd scripts; bru-set-perf-period.sh 21299; bru-en-perf.sh 1; set-c012-10us-1280.sh; ./bw-disparity-loop.sh 10us; poweroff -f"
+    },
+    {
+      "name" : "100us",
+      "command" : "cd root; . ./env.sh; cd scripts; bru-set-perf-period.sh 21299; bru-en-perf.sh 1; set-c012-100us-1280.sh; ./bw-disparity-loop.sh 100us; poweroff -f"
+    },
+    {
+      "name" : "1ms",
+      "command" : "cd root; . ./env.sh; cd scripts; bru-set-perf-period.sh 21299; bru-en-perf.sh 1; set-c012-1ms-1280.sh; ./bw-disparity-loop.sh 1ms; poweroff -f"
+    },
+    {
+      "name" : "10ms",
+      "command" : "cd root; . ./env.sh; cd scripts; bru-set-perf-period.sh 21299; bru-en-perf.sh 1; set-c012-10ms-1280.sh; ./bw-disparity-loop.sh 10ms; poweroff -f"
+    },
+    {
+      "name" : "no-reg",
+      "command" : "cd root; . ./env.sh; cd scripts; bru-set-perf-period.sh 21299; bru-en-perf.sh 1; ./bw-disparity-loop.sh no-reg; poweroff -f"
+    }
+  ]
+}

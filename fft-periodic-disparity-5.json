@@ -1,0 +1,29 @@
+{
+  "name" : "fft-periodic-disparity-5",
+  "workdir" : "farzad",
+  "base" : "br-base.json",
+  "overlay" : "overlay",
+  "outputs" : [ "/root/results/" ],
+  "jobs" : [
+    {
+      "name" : "solo",
+      "command" : "cd root; . ./env.sh; cd scripts; ./fft-solo-periodic.sh; poweroff -f"
+    },
+    {
+      "name" : "100ns",
+      "command" : "cd root; . ./env.sh; cd scripts; set-c012-100ns-1280.sh; ./fft-disparity-periodic.sh 100ns; poweroff -f"
+    },
+    {
+      "name" : "10us",
+      "command" : "cd root; . ./env.sh; cd scripts; set-c012-10us-1280.sh; ./fft-disparity-periodic.sh 10us; poweroff -f"
+    },
+    {
+      "name" : "1ms",
+      "command" : "cd root; . ./env.sh; cd scripts; set-c012-1ms-1280.sh; ./fft-disparity-periodic.sh 1ms; poweroff -f"
+    },
+    {
+      "name" : "no-reg",
+      "command" : "cd root; . ./env.sh; cd scripts; ./fft-disparity-periodic.sh no-reg; poweroff -f"
+    }
+  ]
+}

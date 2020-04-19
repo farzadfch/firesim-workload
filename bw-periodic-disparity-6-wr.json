@@ -1,0 +1,33 @@
+{
+  "name" : "bw-periodic-disparity-6-wr",
+  "workdir" : "farzad",
+  "base" : "br-base.json",
+  "overlay" : "overlay",
+  "outputs" : [ "/root/results/" ],
+  "jobs" : [
+    {
+      "name" : "solo",
+      "command" : "cd root; . ./env.sh; cd scripts; bru-set-perf-period.sh 21299; bru-en-perf.sh 1; ./bw-solo-loop.sh; poweroff -f"
+    },
+    {
+      "name" : "100ns",
+      "command" : "cd root; . ./env.sh; cd scripts; bru-set-perf-period.sh 21299; bru-en-perf.sh 1; set-c012-quadcore-rdwr.sh 212 2 1; ./bw-disparity-loop.sh 100ns; poweroff -f"
+    },
+    {
+      "name" : "1us",
+      "command" : "cd root; . ./env.sh; cd scripts; bru-set-perf-period.sh 21299; bru-en-perf.sh 1; set-c012-quadcore-rdwr.sh 2129 20 10; ./bw-disparity-loop.sh 1us; poweroff -f"
+    },
+    {
+      "name" : "1ms",
+      "command" : "cd root; . ./env.sh; cd scripts; bru-set-perf-period.sh 21299; bru-en-perf.sh 1; set-c012-quadcore-rdwr.sh 2129999 20000 10000; ./bw-disparity-loop.sh 1ms; poweroff -f"
+    },
+    {
+      "name" : "10ms",
+      "command" : "cd root; . ./env.sh; cd scripts; bru-set-perf-period.sh 21299; bru-en-perf.sh 1; set-c012-quadcore-rdwr.sh 21299999 200000 100000; ./bw-disparity-loop.sh 10ms; poweroff -f"
+    },
+    {
+      "name" : "no-reg",
+      "command" : "cd root; . ./env.sh; cd scripts; bru-set-perf-period.sh 21299; bru-en-perf.sh 1; ./bw-disparity-loop.sh no-reg; poweroff -f"
+    }
+  ]
+}
