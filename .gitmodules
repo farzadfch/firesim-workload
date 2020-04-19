@@ -1,3 +1,6 @@
 [submodule "overlay/root/isolbench"]
 	path = overlay/root/isolbench
 	url = https://github.com/farzadfch/isolbench
+[submodule "overlay/root/riscv-hpmcounters"]
+	path = overlay/root/riscv-hpmcounters
+	url = https://github.com/farzadfch/riscv-hpmcounters
