@@ -3,9 +3,11 @@
 set -euo pipefail
 
 #declare -a benches=("disparity"  "localization"  "mser"  "multi_ncut"  "sift"  "svm"  "texture_synthesis"  "tracking")
-declare -a benches=("disparity"  "localization"  "mser"  "sift"  "svm"  "texture_synthesis"  "tracking")
+#declare -a benches=("disparity"  "localization"  "mser"  "sift"  "svm"  "texture_synthesis"  "tracking")
+declare -a benches=("localization")
 #declare -a sizes=("sim" "sqcif" "qcif" "cif" "vga" "fullhd")
-declare -a sizes=("sim" "sqcif" "qcif" "cif")
+#declare -a sizes=("sim" "sqcif" "qcif" "cif")
+declare -a sizes=("cif")
 
 for s in "${sizes[@]}" ; do
   echo "*** Running ${s} ***"
@@ -14,6 +16,7 @@ for s in "${sizes[@]}" ; do
       echo "* ${b}"
       ../bw-reg/reset.sh
       ../riscv-hpmcounters/hpm_counters > ../results/${b}_${s}.csv &
+      usleep 36000
       ./benchmarks/${b}/${s}/${b} benchmarks/${b}/${s} | tee ../results/${b}_${s}.txt
       killall hpm_counters
       while pgrep hpm_counters > /dev/null; do usleep 1000; done
