@@ -1,0 +1,17 @@
+{
+  "name" : "lt-bww-2",
+  "workdir" : "farzad",
+  "base" : "br-base.json",
+  "overlay" : "overlay",
+  "outputs" : [ "/root/results/" ],
+  "jobs" : [
+    {
+      "name" : "1-domain",
+      "command" : "cd root; . ./env.sh; cd scripts; ./lt-bww-1domain.sh; poweroff -f"
+    },
+    {
+      "name" : "3-domain",
+      "command" : "cd root; . ./env.sh; cd scripts; ./lt-bww-3domain.sh; poweroff -f"
+    }
+  ]
+}
