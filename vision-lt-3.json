@@ -1,0 +1,21 @@
+{
+  "name" : "vision-lt-3",
+  "workdir" : "farzad",
+  "base" : "br-base.json",
+  "overlay" : "overlay",
+  "outputs" : [ "/root/results/" ],
+  "jobs" : [
+    {
+      "name" : "1-domain",
+      "command" : "cd root; . ./env.sh; cd scripts; ./vision-lt-1domain.sh; poweroff -f"
+    },
+    {
+      "name" : "3-domain",
+      "command" : "cd root; . ./env.sh; cd scripts; ./vision-lt-3domain.sh; poweroff -f"
+    },
+    {
+      "name" : "noreg-solo",
+      "command" : "cd root; . ./env.sh; cd scripts; ./vision-lt-noreg-solo.sh; poweroff -f"
+    }
+  ]
+}
